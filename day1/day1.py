@@ -1,7 +1,7 @@
 import math
 
 def read_input():
-    with open('day1_input.txt','r') as input:
+    with open('day1/day1_input.txt','r') as input:
         lines = input.readlines()
     return lines   
 
@@ -14,8 +14,8 @@ def calculate_fuel_total(modules):
 
 
 def _calculate_fuel(module):
-    fuel = math.floor(int(module)/3) - 2
-    if (math.floor(int(fuel)/3) - 2 > 0):
+    fuel = int(module)//3 - 2
+    if (fuel > 0):
         fuel += _calculate_fuel(fuel)
     return fuel
 
